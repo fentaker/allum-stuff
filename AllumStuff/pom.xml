@@ -24,7 +24,7 @@
           https://repo.papermc.io/service/rest/repository/browse/maven-public/io/papermc/paper/paper-api/
           и подставьте туда точную существующую версию вместо значения ниже.
         -->
-        <paper.version>26.2.build.60-stable</paper.version>
+        <paper.version>[26.2.build,)</paper.version>
     </properties>
 
     <repositories>
