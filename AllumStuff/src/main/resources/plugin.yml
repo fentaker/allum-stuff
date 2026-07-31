@@ -1,0 +1,39 @@
+name: AllumStuff
+version: '1.0.0'
+main: net.allumgo.stuff.AllumStuffPlugin
+api-version: '26.2'
+author: Allum: GO!
+description: Базовые механики сервера Allum: GO! — авторестарт, локальный/глобальный чат с пузырями, пропуск ночи, теги игроков.
+
+commands:
+  rskip:
+    description: Проголосовать против ближайшего авторестарта сервера.
+    usage: /rskip
+    permission: allumstuff.rskip
+  nskip:
+    description: Отменить текущий пропуск ночи.
+    usage: /nskip
+    permission: allumstuff.nskip
+  title:
+    description: Установить или снять свой тег перед ником в чате.
+    usage: /title <текст с цветами|off>
+    permission: allumstuff.title
+  allumstuff:
+    description: Административные команды AllumStuff.
+    usage: /allumstuff reload
+    permission: allumstuff.admin
+    aliases: [astuff]
+
+permissions:
+  allumstuff.rskip:
+    description: Позволяет голосовать против рестарта
+    default: true
+  allumstuff.nskip:
+    description: Позволяет отменять пропуск ночи
+    default: true
+  allumstuff.title:
+    description: Позволяет устанавливать себе тег в чате
+    default: true
+  allumstuff.admin:
+    description: Административные команды (перезагрузка конфига)
+    default: op
