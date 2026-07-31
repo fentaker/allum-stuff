@@ -1,0 +1,28 @@
+name: Build AllumStuff
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Установка Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+
+      - name: Сборка плагина (mvn package)
+        working-directory: AllumStuff
+        run: mvn -B clean package
+
+      - name: Загрузка готового .jar как артефакт
+        uses: actions/upload-artifact@v4
+        with:
+          name: AllumStuff
+          path: AllumStuff/target/AllumStuff.jar
